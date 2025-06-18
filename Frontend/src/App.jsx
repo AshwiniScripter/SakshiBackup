@@ -37,6 +37,8 @@ import CustomerVisitPhase from './pages/phases/CustomerVisitPhase';
 import PlantDelivery from './pages/phases/PlantDelivery';
 import Login from './authentication/Login';
 import Registration from './authentication/Registration';
+import ForgotPassword from './authentication/ForgotPassword';
+
 
 
 
@@ -107,8 +109,6 @@ const App = () => {
 
 
       </Routes>
-       <Login/>
-       <Registration/>
       <Footer />
     </>
   );
