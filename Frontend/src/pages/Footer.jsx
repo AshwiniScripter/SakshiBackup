@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { MapPin, Phone, Mail, Facebook, Instagram } from 'lucide-react';
-import { FaWhatsapp,FaYoutube  } from 'react-icons/fa'; // ✅ WhatsApp icon from react-icons
+import { FaWhatsapp,FaYoutube  } from 'react-icons/fa'; 
 
 const Footer = () => {
   return (
@@ -35,7 +35,7 @@ const Footer = () => {
         <div>
           <h3 className="text-white text-lg font-semibold mb-2">About the Nursery</h3>
           <p className="text-gray-400 mb-4 text-justify">
-            Founded on April 4, 2020, by Mr. Vijay Trambakrao Khaire, Sakshi Hi-tech Nursery started small with a big dream—to provide healthy, high-quality plants. With modern techniques and personal care, we now serve customers across states, helping them grow greener spaces.
+            Founded on April 4, 2020, by Mr. Vijay Trambakrao Khaire, Sakshi Hi-tech Nursery started small with a big dream to provide healthy, high-quality plants. With modern techniques and personal care, we now serve customers across states, helping them grow greener spaces.
           </p>
           <div className="flex space-x-4">
             <a
