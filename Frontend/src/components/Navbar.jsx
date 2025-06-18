@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useRef, useEffect } from 'react';
 import { ShoppingCart, Menu, X, User } from 'lucide-react';
 import { Link } from 'react-router-dom'; 
 import Logo from '../images/logo.png';
@@ -7,6 +7,9 @@ const Navbar = () => {
   const [showPages, setShowPages] = useState(false);
   const [showShopDropdown, setShowShopDropdown] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const shopRef = useRef();
+  const pagesRef = useRef();
+
 
   const vegetableList = [
     'Cauliflower', 'Papaya', 'Brinjal', 'Lady Finger',
@@ -14,6 +17,21 @@ const Navbar = () => {
     'Chilli', 'Capsicum', 'Watermelon', 'Muskmelon',
     'Cucumber', 'Small Cucumber', 'Drumstick', 'Merigold'
   ];
+
+  useEffect(() => {
+  const handleClickOutside = (event) => {
+    if (shopRef.current && !shopRef.current.contains(event.target)) {
+      setShowShopDropdown(false);
+    }
+    if (pagesRef.current && !pagesRef.current.contains(event.target)) {
+      setShowPages(false);
+    }
+  };
+  document.addEventListener('mousedown', handleClickOutside);
+  return () => {
+    document.removeEventListener('mousedown', handleClickOutside);
+  };
+}, []);
 
   return (
     <nav className="bg-green-800 text-white px-6 py-5 relative z-20">
@@ -27,14 +45,14 @@ const Navbar = () => {
           <Link to="/" className="hover:text-yellow-200 font-semibold">Home</Link>
 
           {/* Shop Dropdown */}
-          <div className="relative">
-            <button
-              onClick={() => setShowShopDropdown(!showShopDropdown)}
-              className="hover:text-yellow-200 font-semibold"
-            >
-              Shop ▾
-            </button>
-            {showShopDropdown && (
+          <div className="relative" ref={shopRef}>
+              <button
+                onClick={() => setShowShopDropdown(!showShopDropdown)}
+                className="hover:text-yellow-200 font-semibold"
+              >
+                Shop ▾
+              </button>
+              {showShopDropdown && (
               <div className="absolute left-1/2 transform -translate-x-1/2 top-full mt-2 bg-white text-black rounded-xl shadow-2xl border z-10 w-100">
                 <div className="grid grid-cols-2 gap-x-6 gap-y-2 px-4 py-3">
                   {vegetableList.map((veg, i) => (
@@ -58,14 +76,14 @@ const Navbar = () => {
 
 
           {/* Pages Dropdown */}
-          <div className="relative">
-            <button
-              onClick={() => setShowPages(!showPages)}
-              className="hover:text-yellow-200 font-semibold"
-            >
-              Pages ▾
-            </button>
-            {showPages && (
+         <div className="relative" ref={pagesRef}>
+              <button
+                onClick={() => setShowPages(!showPages)}
+                className="hover:text-yellow-200 font-semibold"
+              >
+                Pages ▾
+              </button>
+              {showPages && (
               <div className="absolute left-1/2 transform -translate-x-1/2 top-full mt-2 bg-white text-black rounded-xl shadow-2xl z-10 w-56">
                 <Link to="/delivery" className="block px-4 py-2 hover:text-yellow-300">Our Delivery</Link>
                 <Link to="/infrastructure" className="block px-4 py-2 hover:text-yellow-300">Infrastructure</Link>
