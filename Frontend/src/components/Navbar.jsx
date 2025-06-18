@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ShoppingCart, Menu, X } from 'lucide-react';
+import { ShoppingCart, Menu, X, User } from 'lucide-react';
 import { Link } from 'react-router-dom'; 
 import Logo from '../images/logo.png';
 
@@ -80,9 +80,9 @@ const Navbar = () => {
           <button className="hover:text-yellow-200">
             <ShoppingCart size={24} />
           </button>
-          <button className="bg-yellow-500 text-black px-3 py-1 rounded hover:bg-yellow-400 font-semibold">
-            Login
-          </button>
+          <Link to="/profile" className="hover:text-yellow-200" title="Profile">
+            <User size={30} />
+          </Link>
         </div>
 
         {/* Hamburger Icon */}
@@ -154,9 +154,9 @@ const Navbar = () => {
             <ShoppingCart size={24} />
             Cart
           </button>
-          <button className="bg-yellow-500 text-black px-3 py-1 rounded hover:bg-yellow-400 font-semibold mt-2">
-            Login
-          </button>
+          <Link to="/profile" className="hover:text-yellow-200" title="Profile">
+            <User size={30} />
+          </Link>
         </nav>
       </div>
 

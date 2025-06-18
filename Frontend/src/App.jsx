@@ -28,6 +28,8 @@ import ContactUs from './pages/ContactUs';
 import Infrastructure from './pages/Infrastructure';
 import Team from './pages/Team';
 import Phases from './pages/Phases';
+import Profile from './pages/Profile';
+
 
 //phases
 import BookingPhase from './pages/phases/BookingPhase';
@@ -87,6 +89,8 @@ const App = () => {
         <Route path='/infrastructure' element={<Infrastructure/>}/>
         <Route path='/team' element={<Team/>}/>
         <Route path='/phases' element={<Phases/>}/>
+        <Route path='/profile' element={<Profile/>}/>
+
 
         <Route path='/phases/booking' element={<BookingPhase/>}/>
         <Route path='/phases/sowing' element={<SowingPhase/>}/>
