@@ -66,7 +66,9 @@ const ProductCard = () => {
   return (
     <div className="p-6 bg-green-50">
       <Toaster position="top-right" reverseOrder={false} />
-
+       <h2 className="text-3xl font-bold text-center text-green-700 mb-8">
+        Top selling Plants
+      </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
         {products.map((product) => (
           <div
