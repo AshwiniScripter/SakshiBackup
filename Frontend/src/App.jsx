@@ -36,6 +36,8 @@ import PlantPreparation from './pages/phases/PlantPreparation';
 import CustomerVisitPhase from './pages/phases/CustomerVisitPhase';
 import PlantDelivery from './pages/phases/PlantDelivery';
 import Login from './authentication/Login';
+import Registration from './authentication/Registration';
+
 
 
 
@@ -106,6 +108,7 @@ const App = () => {
 
       </Routes>
        <Login/>
+       <Registration/>
       <Footer />
     </>
   );
